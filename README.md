@@ -1,23 +1,20 @@
-# `cortex-m-quickstart`
+# `decode_embedded A`
 
-> A template for building applications for ARM Cortex-M microcontrollers
+> Implementation of decode assignment on a Nucleo64 using Rust.
 
-# [Documentation](https://docs.rs/cortex-m-quickstart)
+# How to build
 
-# License
+1. `git clone https://github.com/superspindel/decode_embedded.git`
+2. `cd decode_embedded`
+3. `TARGET=thumbv7em-none-eabihf`
+4. `xargo build --target $TARGET --release`
 
-Licensed under either of
-
-- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or
-  http://www.apache.org/licenses/LICENSE-2.0)
-
-- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
-
-at your option.
-
-## Contribution
-
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
-dual licensed as above, without any additional terms or conditions.
-# decode_embedded
+# How to run
+5. Open up two terminal windows in source path.
+6. `openocd -f interface/stlink-v2-1.cfg -f target/stm32f4x.cfg` on terminal window 1.
+7. Switch to terminal window 2.
+7. `echo 'add-auto-load-safe-path /' >> ~/.gdbinit`
+8. `arm-none-eabi-gdb target/$TARGET/release/decode_embedded`
+9. `continue`
+10. Switch to terminal window 2.
+11. Read output decoded string.
