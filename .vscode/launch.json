@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "autorun": [
+                "monitor arm semihosting enable",
+                "load",
+                "break decode_embedded::main" // Heads up: crate name
+            ],
+            "cwd": "${workspaceRoot}",
+            "gdbpath": "arm-none-eabi-gdb",
+            "executable": "./target/thumbv7em-none-eabihf/debug/decode_embedded", // Heads up: target name
+            "name": "Debug",
+            "remote": true,
+            "request": "attach",
+            "target": ":3333",
+            "type": "gdb"
+        }
+    ],
+    "version": "0.2.0"
+}

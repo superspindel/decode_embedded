@@ -1,11 +1,6 @@
 [package]
-authors = ["Viktor Fällman"]
-categories = ["embedded", "no-std"]
-description = "Decode a string example from course implemented on a Nucleo64 board"
-keywords = ["arm", "cortex-m", "template"]
-license = "MIT OR Apache-2.0"
+authors = ["Viktor Fällman <vikfll-0@student.ltu.se>"]
 name = "decode_embedded"
-repository = "https://github.com/superspindel/decode_embedded"
 version = "0.1.0"
 
 [dependencies]
