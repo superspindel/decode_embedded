@@ -153,8 +153,6 @@ static mut CODED:[u32; 132] = [           // The actual array to be decoded
 
 fn main() {
     let mut stdout = hio::hstdout().unwrap();
-    writeln!(stdout, "Hello, world!").unwrap();
-
     unsafe {
         decode(&mut CODED, &mut PLAIN);      // call decode with the coded array, the array in which to put the decoded characters and the starting seed
         for x in PLAIN.iter()
