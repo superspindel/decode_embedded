@@ -1,23 +1,12 @@
-# `cortex-m-quickstart`
+# `decode_embedded`
 
-> A template for building applications for ARM Cortex-M microcontrollers
+> An implementation of a decoding assignment implemented on a Nucleo 64 using Rust.
 
-# [Documentation](https://docs.rs/cortex-m-quickstart)
+# Branches
 
-# License
+A. Backport assignment 3b to your chosen target. Use semihosting in order to write the resulting string to the host. You may need to use --release for decoding the long (coded) message, as being deeply recursive unoptimized code may run out of stack memory.
 
-Licensed under either of
+B. Discuss from a memory safety perspective the outcome.
 
-- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or
-  http://www.apache.org/licenses/LICENSE-2.0)
+C. Compare for the short message (abc), the number of cycles required for decode in debug (standard) vs. --release. As a comparison my straightforword C implementation took 2200 cycles in best optimized mode using gcc (-o3), while my (translation) to Rust code took 1780 cycles (--release). (Both executed on a bluepill board at 8MHz without (flash) memory wait states).
 
-- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
-
-at your option.
-
-## Contribution
-
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
-dual licensed as above, without any additional terms or conditions.
-# decode_embedded
