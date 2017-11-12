@@ -14,8 +14,9 @@ use cortex_m_semihosting::hio;
 
 
 static mut SEED: u32 = 0x0e0657c1; // The seed to be used to decode the message
-static mut PLAIN:[u8; 3] = [0; 3]; // array where decoded chars will be stored
+static mut PLAIN:[u8; 4] = [0; 4]; // array where decoded chars will be stored
 static mut _ABC:[u32; 4] = [0x9fdd9158, 0x85715808, 0xac73323a, 0];  // to test decoding, a known array is given containing a,b,c
+
 
 fn main() {
     let mut stdout = hio::hstdout().unwrap();
