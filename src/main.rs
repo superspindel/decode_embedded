@@ -1,7 +1,3 @@
-//! Prints "Hello, world!" on the OpenOCD console using semihosting
-//!
-//! ---
-
 #![feature(used)]
 #![no_std]
 
