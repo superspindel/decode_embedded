@@ -1,18 +1,16 @@
-#![feature(used)]
 #![no_std]
 
 extern crate cortex_m_semihosting;
-extern crate stm32f40x;
+extern crate stm32f103xx;
 
 use core::fmt::Write;
-
 use cortex_m_semihosting::hio;
 
 
 static mut SEED: u32 = 0x0e0657c1; // The seed to be used to decode the message
-static mut PLAIN:[u8; 132] = [0; 132]; // array where decoded chars will be stored
+static mut PLAIN:[u8; 4] = [0; 4]; // array where decoded chars will be stored
 static mut _ABC:[u32; 4] = [0x9fdd9158, 0x85715808, 0xac73323a, 0];  // to test decoding, a known array is given containing a,b,c
-static mut CODED:[u32; 132] = [           // The actual array to be decoded
+/*static mut CODED:[u32; 132] = [           // The actual array to be decoded
         0x015e7a47,
         0x2ef84ebb,
         0x177a8db4,
@@ -145,12 +143,12 @@ static mut CODED:[u32; 132] = [           // The actual array to be decoded
 	    0x09a1c6c8,
 	    0xc2e41061,
 	        0];
-
+*/
 
 fn main() {
     let mut stdout = hio::hstdout().unwrap();
     unsafe {
-        decode(&mut CODED, &mut PLAIN);      // call decode with the coded array, the array in which to put the decoded characters and the starting seed
+        decode(&mut _ABC, &mut PLAIN);      // call decode with the coded array, the array in which to put the decoded characters and the starting seed
         for x in PLAIN.iter()
         {
             write!(stdout, "{}", *x as char).unwrap();

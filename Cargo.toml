@@ -16,9 +16,9 @@ cortex-m-semihosting = "0.2.0"
 features = ["abort-on-panic"]
 version = "0.3.3"
 
-[dependencies.stm32f40x]
-features = ["rt"] # see comment above
-git = "https://gitlab.henriktjader.com/pln/STM32F40x"
+[dependencies.stm32f103xx]
+features = ["rt"] # this feature indicates that the device crate will provide the vector table
+version = "0.7.5"
 
 [profile.release]
 debug = true

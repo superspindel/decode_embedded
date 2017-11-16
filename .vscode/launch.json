@@ -8,7 +8,7 @@
             ],
             "cwd": "${workspaceRoot}",
             "gdbpath": "arm-none-eabi-gdb",
-            "executable": "./target/thumbv7em-none-eabihf/debug/decode_embedded", // Heads up: target name
+            "executable": "./target/thumbv7m-none-eabi/debug/decode_embedded", // Heads up: target name
             "name": "Debug",
             "remote": true,
             "request": "attach",
