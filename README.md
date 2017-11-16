@@ -20,8 +20,6 @@
 11. Read output decoded string.
 
 
-## Number of cycles
-### Release
-> 328 cycles
-### Debug
-> 4260 cycles
+## Discussion from memory safety perspective
+
+There isn't really any changes when going to embedded from a memory safety perspective. We still have unsafe implementations since there are STATIC variables, and the outcome is the same as before. This is good since that means that there are nothing hindering you from implementing code on embedded platforms using rust and the compiler can still ensure memory safety on these devices.
