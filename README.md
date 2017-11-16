@@ -1,4 +1,4 @@
-# `decode_embedded C`
+# `decode_embedded B`
 
 > Implementation of decode assignment on a Nucleo64 using Rust.
 
