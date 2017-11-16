@@ -18,3 +18,10 @@
 9. `continue`
 10. Switch to terminal window 2.
 11. Read output decoded string.
+
+
+## Number of cycles
+### Release
+> 328 cycles
+### Debug
+> 4260 cycles
