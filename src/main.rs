@@ -20,13 +20,14 @@ fn main() {
     unsafe {
 		(*DWT.get()).enable_cycle_counter();
         (*DWT.get()).cyccnt.write(0);
-		writeln!(stdout, "{} is the number of cycles before decode starts", core::ptr::read_volatile(0xE0001004 as *mut u32)).unwrap();
+		let cycles_before = core::ptr::read_volatile(0xE0001004 as *mut u32);
         decode(&mut _ABC, &mut PLAIN);      // call decode with the coded array, the array in which to put the decoded characters and the starting seed
-		writeln!(stdout, "{} is the number of cycles performed when decode ends", core::ptr::read_volatile(0xE0001004 as *mut u32)).unwrap();
+		let cycles_after = core::ptr::read_volatile(0xE0001004 as *mut u32);
         for x in PLAIN.iter()
         {
             write!(stdout, "{}", *x as char).unwrap();
         }
+		writeln!(stdout, "{} cycles before, {} cycles after", cycles_before, cycles_after).unwrap();
     }
 }
 
